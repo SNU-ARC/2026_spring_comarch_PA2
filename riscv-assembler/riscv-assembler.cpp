@@ -261,14 +261,7 @@ bool riscv_asm::assemble_beq() {
     rs1 = (atoi(m[1].str().c_str()) & 0x0000001F) << 15;
     rs2 = (atoi(m[3].str().c_str()) & 0x0000001F) << 20;
 
-    /*
-    imm12 = (atoi(m[5].str().c_str()) & 0x00003FFC) >> 1;
-    imm_extended = 	((imm12 & 0x00001000) << 19) |
-                    ((imm12 & 0x00000800) >> 4) |
-                    ((imm12 & 0x000007E0) << 20) |
-                    ((imm12 & 0x0000001E) << 7);
-    */
-    imm12 = (atoi(m[5].str().c_str()) & 0x00000FFF);
+    imm12 = (atoi(m[5].str().c_str()) & 0x00001FFF);
     imm_extended = ((imm12 & 0x00001000) << 19) | ((imm12 & 0x00000800) >> 4) | ((imm12 & 0x000007E0) << 20) |
                    ((imm12 & 0x0000001E) << 7);
 
