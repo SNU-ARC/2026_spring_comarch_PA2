@@ -4,7 +4,7 @@ sub	x7, x5, x6
 nop
 nop
 nop
-beq	x0, x7, 4
+beq	x0, x7, 8
 addi    x6, x6, 1
 addi	x6, x6, 1 
 addi	x6, x6, 1 

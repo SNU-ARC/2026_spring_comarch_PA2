@@ -268,7 +268,7 @@ bool riscv_asm::assemble_beq() {
                     ((imm12 & 0x000007E0) << 20) |
                     ((imm12 & 0x0000001E) << 7);
     */
-    imm12 = (atoi(m[5].str().c_str()) & 0x00000FFF) << 1;
+    imm12 = (atoi(m[5].str().c_str()) & 0x00000FFF);
     imm_extended = ((imm12 & 0x00001000) << 19) | ((imm12 & 0x00000800) >> 4) | ((imm12 & 0x000007E0) << 20) |
                    ((imm12 & 0x0000001E) << 7);
 
